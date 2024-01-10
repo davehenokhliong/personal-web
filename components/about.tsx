@@ -1,12 +1,16 @@
 "use client";
 
-import React from "react";
+import React from 'react';
+import { useActiveSectionContext } from "@/context/active-section-context";
+import Link from "next/link";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
   const { ref } = useSectionInView("About");
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
 
   return (
     <motion.section
@@ -19,26 +23,47 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        I'm currently taking{" "}
-        <span className="font-medium">Electronics Engineering</span> with a focus on 
-        AI, with a cGPA of 3.91/4.3. I have a passion for programming. I did many coding projects and internships and learned{" "}
-        <span className="font-medium">full-stack web development</span> thoroughly.{" "}
-        My core stack is{" "}
-        <span className="font-medium">
+        I'm currently taking Electronics Engineeringin HKU focusing on 
+        Data and AI systems, with a cGPA of 3.91/4.3. I have a passion for programming and 
+        have been involved in various {" "}
+        <Link
+          href="#projects"
+          className="text-blue-500 dark:text-purple-300"
+          onClick={() => {
+            setActiveSection("Projects");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          coding projects
+        </Link>
+        {" "}and{" "}
+        <Link
+          href="#experience"
+          className="text-blue-500 dark:text-purple-300"
+          onClick={() => {
+            setActiveSection("Experience");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          internships
+        </Link>
+
+        . Along my journey, I have been learning AI and web development. I am always looking to learn new technologies!
+        My web dev core stack is{" "}
+        <span className="font-bold">
           React, Next.js, Node.js, MongoDB, and TypeScript
         </span>
-        . I am always looking to learn new technologies. I am currently looking for an{" "}
-        <span className="font-medium">internship position</span> as a software
-        developer.
+        . I am currently looking for an{" "}
+        <span className="font-bold">internship position</span> as a software
+        engineer.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        piano, do content creation, and invest in crypto projects. I also enjoy{" "}
-        <span className="font-medium">reading books</span>. I am currently
-        reading{" "}
-        <span className="font-medium">Ed Catmull's Creativity, Inc.</span>. I love
-        learning new things!
+        Outside of school/work, I enjoy playing piano,{" "}
+        <a className="text-blue-500 dark:text-purple-300" href="https://tiktok.com/@davehenokh">doing content creation (recently hit 100K folls!)</a>, 
+        and investing in{" "}<a className="text-blue-500 dark:text-purple-300" href="https://rendernetwork.com/">crypto projects</a>
+        . I also love reading books. I am currently reading{" "}
+        <a className="text-blue-500 dark:text-purple-300" href="https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012">Creativity, Inc. by Ed Catmull</a>.
       </p>
     </motion.section>
   );

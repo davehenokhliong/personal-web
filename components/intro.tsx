@@ -4,8 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
+import { BsArrowDown, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -59,14 +58,58 @@ export default function Intro() {
       </div>
 
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-4 mt-4 px-4 text-2xl font-medium sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Dave.</span> I'm really passionate in coding, especially in the fields of{" "}
-        <span className="font-bold"> AGI and web development</span>. I enjoy
-        building <span className="italic">chatbots, sites, & SaaS</span>. Take a look at my projects!
+        <span className="font-bold">Hello, I'm Dave Henokh.</span>
+        
       </motion.h1>
+
+      <motion.h2
+        className="mb-5 px-4 text-sm font-light !leading-[1.3] sm:text-2xl"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+      >
+        Current AI Research{" "}
+        <a
+          href="https://algogene.com/"
+          className="text-blue-500 dark:text-purple-300"
+        >
+          @Algogene Fintech
+        </a>{" "}
+        & Founder{" "}
+        <a
+          href="https://mustimusik.id/"
+          className="text-blue-500 dark:text-purple-300"
+        >
+          @Musti Musik
+        </a>
+        .<br />
+        Prev Software Eng{" "}
+        <a
+          href="https://sevenpreneur.com/"
+          className="text-blue-500 dark:text-purple-300"
+        >
+          @Sevenpreneur
+        </a>
+        , Technology Intern{" "}
+        <a
+          href="https://www.rougevc.com/"
+          className="text-blue-500 dark:text-purple-300"
+        >
+          @Rouge VC
+        </a>
+        .<br />
+        ElecEng '25{" "}
+        <a
+          href="https://www.hku.hk/"
+          className="text-blue-500 dark:text-purple-300"
+        >
+          @HKU
+        </a>
+        .
+      </motion.h2>
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -85,7 +128,7 @@ export default function Intro() {
           }}
         >
           Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <BsArrowDown className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
@@ -93,8 +136,7 @@ export default function Intro() {
           href="https://docs.google.com/document/d/1glmJBywQz8BPuCoi_UdWr8dzuPKJqU2_aUs0yEX3k8o/edit?usp=sharing"
           target="_blank"
         >
-          My Resume{" "}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          My Resume
         </a>
 
         <a

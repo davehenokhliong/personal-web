@@ -7,9 +7,10 @@ export default function Footer() {
         Made with ❤️ by Dave Henokh Liong.
       </small>
       <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
-        Framer Motion, React Email & Resend, Vercel hosting.
+        <span className="font-semibold">About this website:</span> Built with
+        React & Next.js, TypeScript, Tailwind CSS,
+        Framer Motion, Vercel hosting. It's available on {" "}
+        <a className="text-blue-500 dark:text-purple-300" href="https://github.com/davehenokhliong/personal-web">GitHub</a>.
       </p>
     </footer>
   );
